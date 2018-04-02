@@ -1,0 +1,575 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.main, .logo, .menubar, .site_content, .footer {
+	margin-left: auto;
+	margin-right: auto; 
+}
+.main {
+	width: 100%;
+	height: auto;
+	background: radial-gradient(at top, #FEFFFF, #A7CECC); 
+}
+.header {
+	height: 399px;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px; 
+	font-size: 0.8em;
+}
+img {
+ max-width: 100%;
+ height: auto;
+ margin: 0 0 10px 0;
+}
+.logo {
+	width: 65%;
+	margin: 0 17.5%;
+	height: 245px;
+	padding-bottom: 60px;
+	position: relative;
+	overflow: hidden;
+}
+.logo a {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+}
+.logo h2 {
+	position: absolute;
+	left: 27%;
+	top: 33%;
+	font: normal 180% "century gothic", arial, sans-serif;
+}
+.logo_text span {
+	font-weight: bold;
+}
+.top_menubar {
+	height: 30px;
+	width: 65%;
+	margin: 0 17.5%;
+	background-image: linear-gradient(#847bba, #7568ba);
+}
+.input_field {
+	display: inline-block;
+	width: 300px;
+	height: 30px;
+}
+.input_field a{
+	text-decoration: none;
+	font: normal 140% "trebuchet ms", sans-serif;
+	color: white;
+	display: block;
+	float: left;
+	padding-left: 15px;
+	padding-top: 5px;
+	text-transform: uppercase;
+	transition: 0.5s all;
+}
+.input_field a:hover {
+	color: grey;
+}
+.clearfix:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+#popup {
+	background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: none;
+    pointer-events: none;
+}
+#popup:target {
+	display: block;
+	pointer-events: auto;
+}
+.popup_input {
+	width: 500px;
+	height: 300px;
+	background-color: #FFFFFF;
+	border: 2px solid black;
+	border-radius: 10px;
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.popup_input a {
+	color: black;
+	float: right;
+	margin-right: 10px;
+}
+.popup_input h1 {
+	text-align: center;
+}
+.popup_form {
+	margin: 10px 0px 0px 10px;
+}
+ul.top_menu {
+	position: relative;
+	float: right;
+	z-index: 600;
+}
+ul.top_menu li {
+	list-style: none;
+	float: left;
+}
+ul.top_menu li a{
+	font: normal 130% "trebuchet ms", sans-serif;
+	text-decoration: none;
+	display: block;
+	width: 120px;
+	padding: 5px;
+	color: white;
+	background-image: linear-gradient(#847bba, #7568ba);
+	text-transform: uppercase;
+	transition: 0.5s all;
+}
+ul.top_menu li a:hover {
+	color: grey;
+}
+.menu_usluga {
+	position: relative;
+}
+.menudrop_usluga {
+	position: absolute;
+	width: 100%;
+	top:-9999em;
+	opacity: 0;
+	transition: 0.5s opacity;
+}
+.menu_usluga:hover .menudrop_usluga {
+	opacity: 1;
+	top: auto;
+}
+.menu_usluga::after {
+	content: " ";
+	position: absolute;
+	border: 5px solid;
+	border-color: white transparent transparent transparent;
+	right: 3.2em;
+	top: 1em;
+	transition: 0.5s;
+}
+.menu_usluga:hover::after {
+	transform: scaleY(-1);
+	top: 0.6em;
+}
+
+/************************Main bottom menu*******************************************/
+
+.menubar {
+	width: 65%;
+	height: 64px;
+	margin: 0 17.5%;
+	background-image: linear-gradient(#847bba, #7568ba);
+	border-radius: 5px 5px 5px 5px;
+}
+ul.bottom_menu {
+	height: 50px;
+}
+ul.bottom_menu li {
+	list-style: none;
+	float: left;
+}
+ul.bottom_menu li:first-child a {
+	border-radius: 3px 0 0 3px;
+}
+ul.bottom_menu li .menu_drop li:first-child a {
+    border-radius: 3px 3px 0 0; 
+}
+ul.bottom_menu li:last-child a {
+	border-radius: 0 3px 3px 0;
+	border-right: 0;
+}
+ul.bottom_menu li .menu_drop li:last-child a {
+    border-radius: 0 0 3px 3px; 
+    border-right: 0;
+}
+ul.bottom_menu li .menu_drop li a{
+	border-radius: 0;
+	border-right: 0;
+}
+ul.bottom_menu li a {
+	font: normal 150% "trebuchet ms", sans-serif;
+	width: 160px;
+	text-decoration: none;
+	background-image: linear-gradient(#847bba, #7568ba);
+	display: block;
+	color: white;
+	padding: 20px;
+	text-transform: uppercase;
+	border-right: 1px solid black;
+	transition: 0.5s all;
+}
+ul.bottom_menu li a:hover {
+	color: white;
+	background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+	padding: 20px 0 20px 20px; 
+}
+.menu_list {
+	position: relative;
+}
+.menu_drop {
+	position: absolute;
+	width: 100%;
+	top:-9999em;
+	opacity: 0;
+	transition: 0.5s opacity;
+	border-top: 8px solid transparent;
+}
+.menu_list:hover .menu_drop {
+	opacity: 1;
+	top: auto;
+}
+.menu_list::after {
+	content: " ";
+	position: absolute;
+	border: 8px solid;
+	border-color: white transparent transparent transparent;
+	right: 1.7em;
+	top: 2.2em;
+	transition: 0.5s;
+}
+.menu_list:hover::after {
+	transform: scaleY(-1);
+	top: 1.5em;
+}
+
+/***************************Site content*******************************************/
+
+.site_content {
+	width: 65%;
+	margin: 0 17.5%;
+	height: auto;
+	background-color: white;
+	font-size: 0.8em;
+	text-align: left;
+}
+.site_content a {
+	text-decoration: none;
+}
+
+h2.name_page {
+	font: bold 200% "Rubik One", arial, sans-serif;
+	color: #483D8B;
+	text-align: center;
+	padding: 20px 0;
+	text-shadow: grey 2px 3px 4px;
+}
+.text_description p {
+	font: normal 130% "Rubik One", arial, sans-serif;
+	padding: 0 8px 0 8px;
+	color: black;
+}
+.katalog {
+	padding: 30px 0 30px 0;
+}
+table.table_katalog {
+	margin: 20px 10% 20px 10%;
+	border-spacing: 20px;
+}
+.table_katalog tr {
+	margin: 50px;
+}
+.table_katalog tr td {
+	padding: 10px 1px 10px 1px; 
+	border: 2px solid black;
+	border-color: grey;
+	border-radius: 5px 5px 5px 5px;
+}
+.table_katalog p {
+	font: normal 130% "Rubik One", arial, sans-serif;
+	text-align: center;
+	font-weight: bold;
+}
+p.price {
+	font-size: 200%;
+	color: #006400;
+}
+a.tovar_name {
+	color: #483D8B;
+}
+a.tovar_name:hover {
+	color:grey;
+	transition: 0.5s all;
+}
+/*--------------------------O magazine---------------------------------------*/
+.omagazine {
+	font-size: 0.8em;
+	padding: 10px;
+}
+.omagazine h1 {
+	font: normal 300% "Rubik One", arial, sans-serif;
+	color: #483D8B;
+	padding: 5px 0 5px 0;
+}
+.omagazine h2 {
+	font: normal 260% "Rubik One", arial, sans-serif;
+	color: #483D8B;
+	padding: 25px 0 5px 0;
+	text-align: center;
+}
+.omagazine p {
+	font: normal 150% "Rubik One", arial, sans-serif;	
+}
+.omagazine table tr td {
+	margin: 0 30px; 
+	width: 50%;
+}
+#velo {
+	width: 150px;
+	height: 150px;
+	float: left;
+}
+/*--------------------------Kontakti & remont & dostavka & index---------------------------------------*/
+.kontakt, .remont, .dostavka, .main_content {
+	font-size: 0.8em;
+	padding: 15px;
+}
+.kontakt h1, .remont h1, .dostavka h1, .main_content h1 {
+	font: normal 300% "Rubik One", arial, sans-serif;
+	color: #483D8B;
+	padding: 0 0 10px 0;
+	text-align: center;
+}
+.main_content h1 {
+	font: normal 350% "Rubik One", arial, sans-serif;
+	text-shadow: 2px 2px 3px grey;
+}
+.kontakt p, .remont p, .dostavka p, .main_content p {
+	font: normal 160% "Rubik One", arial, sans-serif;
+	margin-bottom: 10px; 
+}
+.kontakt a {
+	color: #483D8B;
+}
+.remont h2, .dostavka h2 {
+	font: normal 200% "Rubik One", arial, sans-serif;
+	color: #483D8B;
+	padding: 0 0 10px 0;
+}
+.remont ol {
+	margin: 20px 0 20px 20px; 
+}
+.remont ol li {
+	font: normal 160% "Rubik One", arial, sans-serif;
+	margin-top: 15px;
+}
+#rem {
+	display: inline-block;
+	padding: 5px;
+	background: radial-gradient(at top, #FEFFFF, #A7CECC);
+	border-radius: 5px 5px 5px 5px;
+}
+.dostavka table {
+	margin: 10px 0;
+}
+.dostavka table tr td{ 
+	font: normal 170% "Rubik One", arial, sans-serif;
+	border-top: 1px solid black;
+	padding-left: 10px; 
+}
+.dostavka table tr:first-child {
+	font: normal 120% "Rubik One", arial, sans-serif;
+}
+table.usluga_dostavka {
+	margin: 10px 0;
+	border: none;
+}
+table.usluga_dostavka tr td{
+	border-top: 1px solid black;
+
+}
+table.usluga_dostavka tr:first-child {
+	font: normal 100% "Rubik One", arial, sans-serif;
+}
+.main_content img{
+	width: 70%;
+	height: 300px;
+	margin: 0 15%;
+	border: 2px solid #483D8B;
+	border-radius: 5px 5px 5px 5px;
+	margin-bottom: 50px;
+}
+#about {
+	width: 80%;
+	margin: 0 10%;
+	border: none;
+}
+.main_content p {
+	margin: 10px 5% 10px 5%;
+}
+/***************************Footer*******************************************/
+
+.footer {
+	width: 65%;
+	margin: 0 17.5%;
+	height: 120px;
+	background-image: linear-gradient(#847bba, #7568ba);
+	border-radius: 0px 0px 5px 5px;
+	font-size: 0.8em;
+}
+.footer h2 {
+	font: normal 150% "Rubik One", arial, sans-serif;
+	color: white;
+	text-align: center;
+}
+.follow {
+	width: auto;
+	height: 50px;
+	text-align: center;
+	padding-top: 10px;
+}
+.follow img {
+	width: 50px;
+	height: 50px;
+	border-radius: 5px 5px 5px 5px;
+	margin-left: 3px;
+}
+.footer p {
+	font: normal 130% "Rubik One", arial, sans-serif;
+	color: white;
+	clear: both;
+	padding-left: 10px;
+}
+/*******************************REGISTRATION***********************************/
+
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+	background: radial-gradient(at top, #FEFFFF, #A7CECC);
+	display: flex;
+}
+.reg_wrap {
+	margin: auto;
+	width: 500px;
+	height: 500px;
+	background-color: #FFFFFF;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+}
+.reg_logo {
+	border-bottom: 2px solid black;
+}
+.reg_form {
+	width: calc(100% - 20px);
+	margin: 10px;
+}
+.reg_field {
+	margin-bottom: 10px;
+}
+.reg_field label{
+	font: normal 18px "Rubik One", arial, sans-serif;
+}
+.reg_field input{
+	font: normal 18px "Rubik One", arial, sans-serif;
+	width: 250px;
+	height: 25px;
+	border-radius: 5px;
+}
+.reg_error {
+	font: italic 14px "Rubik One", arial, sans-serif;
+	color: red;
+}
+#button {
+	margin-top: 10px;
+	font: normal 120% "Rubik One", arial, sans-serif;
+	width: 200px;
+	height: 30px;
+}
+
+/********************************Profile*******************************************/
+
+.my_info {
+	width: 300px;
+	background-color: yellow;
+	font: normal 1em "Rubik One", arial, sans-serif;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+.my_info h3{
+	font-size: 2em;
+}
+
+/*******************************Admin Panel****************************************/
+
+.admin_content {
+	font: normal 1em "Rubik One", arial, sans-serif;
+}
+.admin_content h2 {
+	text-align: center;
+	font-size: 200%;
+	margin-bottom: 10px;
+} 
+.add_product {
+	background-color: #FBF8F8;
+}
+.set_products {
+	width: 70%;
+	background-color: #C3C3C3;
+	border: 2px solid black;
+}
+.products_set_wrapper {
+	padding: 0 10px 10px 10px;
+}
+.field, .field_select {
+	float: left;
+}
+.field input {
+	width: 300px;
+	height: 20px;
+	margin-right: 10px;
+	font-size: 15px;
+}
+.field_select select {
+	width: 240px;
+	height: 24px;
+}
+.b1_field {
+	margin: 10px 0px 5px 0px;
+}
+.discription textarea {
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+#done {
+	font-size: 15px;
+	padding: 6px;
+}
+.success_done {
+	margin-top: 10px;
+	font-size: 20px;
+	color: #232322;
+}
+.delete_form input {
+	float: right;
+}
+/********************************Media Queries************************************/
+@media (max-width: 1430px) {
+	.logo h2 {
+	position: absolute;
+	left: 30%;
+	top: 33%;
+	font: normal 150% "century gothic", arial, sans-serif;
+	}
+	.logo a {
+	position: absolute;
+	left: 3%;
+	top: 8%;
+	width: 250px;
+	height: 250px;
+	}
+}
+
+
